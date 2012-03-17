@@ -1,0 +1,23 @@
+---
+layout: post
+title: upgrading openbsd 4.6 to 4.7 and other xen considerations
+tags:
+- computa
+- derp
+- openbsd
+- rawr
+- redemption
+- win
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  _wp_old_slug: ''
+---
+i did this from a preexisting installation of openbsd 4.6.
+
+basically, all i did was downloaded the <code>bsd.rd</code> for openbsd 4.7 and copied it where the existing one was. i restarted the machine and at the <code>boot&gt;</code> prompt i entered
+<pre>boot&gt; boot hd0a:bsd.rd</pre>
+
+what remained was exactly like booting from a 4.7 install cd. i selected upgrade and now i have openbsd 4.7 up and running. yay!

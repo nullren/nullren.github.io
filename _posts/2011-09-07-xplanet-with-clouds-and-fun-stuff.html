@@ -1,0 +1,27 @@
+---
+layout: post
+title: xplanet with clouds and fun stuff
+tags:
+- computa
+- desktop
+- eye candy
+- linux
+- pacman
+- win
+- xplanet
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+---
+<p>i might add this to my wiki of awesome. but this was pretty easy to set up.</p>
+<pre>$ sudo pacman -S xplanet
+$ mkdir ~/.xplanet
+$ cp /usr/share/xplanet/config/overlay_clouds ~/.xplanet/config</pre>
+<p>now there are a couple of things that i needed to set up: a cronjob to download new cloud files and add <code>xplanet</code> to my <code>.xinitrc</code>.</p>
+<pre># crontab
+@hourly curl -so ~/.xplanet/clouds.jpg ftp://ftp.iastate.edu/pub/xplanet/clouds_2048.jpg</pre>
+<pre># xinitrc
+xplanet -projection mercator -config config -longitude -120 -quality 100 -transparency -fork -wait 600</pre>
+<p>because i'm using the mercator projection, it doesn't make much sense to set the latitude, but the longitude centers the map over my location. the config points to the file in <code>~/.xplanet</code>. the transparency flag was set because i use xcompmgr and it allows xplanet to be viewed under my transparent windows. oooh, so pretty.</p>

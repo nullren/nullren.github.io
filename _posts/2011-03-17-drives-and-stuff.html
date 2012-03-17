@@ -1,0 +1,35 @@
+---
+layout: post
+title: drives and stuff
+tags:
+- awesome
+- computa
+- linux
+- luks
+- lvm2
+- raid
+- win
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+---
+<p>so i installed 4 new harddrives, 2 1tb drives and 2 2tb drives. not really too sure what i want to do with them. so i put them in a raid:</p>
+<pre> $  sudo mdadm --create /dev/md0 --level=1 --raid-devices=2 --metadata=0.90 /dev/sdc1 /dev/sdd1
+ $  sudo mdadm --create /dev/md1 --level=1 --raid-devices=2 --metadata=0.90 /dev/sde1 /dev/sdf1</pre>
+
+<p>then i thought, "man, it'd be cool if there were encrypted." so i did that, too. pretty much following any other blog of instructions, i made a couple keys for each drive:</p>
+<pre>  $  dd if=/dev/urandom of=/mnt/usb/luks-2tb-raid bs=512 count=4
+  $  dd if=/dev/urandom of=/mnt/usb/luks-1tb-raid bs=512 count=4</pre>
+<p>and then i set up luks:</p>
+<pre>  #  cryptsetup -c aes-xts-plain -s 512 -v luksFormat /dev/md0 /mnt/usb/luks-1tb-raid 
+  #  cryptsetup -c aes-xts-plain -s 512 -v luksFormat /dev/md1 /mnt/usb/luks-2tb-raid </pre>
+<p>then i opened the luks partitions and did the lvm stuff:</p>
+<pre>  #  cryptsetup luksOpen /dev/md0 crypt1 --key-file /mnt/usb/luks-1tb-raid 
+  #  cryptsetup luksOpen /dev/md1 crypt2 --key-file /mnt/usb/luks-2tb-raid 
+  #  pvcreate /dev/mapper/crypt1
+  #  pvcreate /dev/mapper/crypt2
+  #  vgcreate bitshit /dev/mapper/crypt1 /dev/mapper/crypt2
+  #  lvcreate -L 1T -n torrents bitshit
+  #  lvcreate -L 1T -n homeshit  bitshit</pre>

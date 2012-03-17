@@ -1,0 +1,57 @@
+---
+layout: post
+title: adding tun module to debian kernel
+tags:
+- kernel
+- linux
+- win
+- xen
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  _wp_old_slug: ''
+---
+this is going to be a mess, i can feel it now.
+
+the kernel i'm using is linux-image-2.6.29-xs5.5.0.14. i'm going to get sources for linux-source-2.6.29-xs5.5.0.17 and compile it with the tun module.
+<pre># apt-get install fakeroot build-essential devscripts
+# apt-get install linux-libc-dev binutils bzip2 cpp cpp-4.3 gcc gcc-4.3 libc6-dev libgmp3c2 libgomp1 libmpfr1ldbl libncurses5-dev kernel-package</pre>
+
+i just copy and pasted that second line from some forum i saw... i don't know why, but it seems legit?
+
+i also installed backports. i thought i was going to get an old kernel source from there, but they ended up not having it.
+<pre>deb http://www.backports.org/debian/ lenny-backports main</pre>
+<pre># wget -O - http://backports.org/debian/archive.key | apt-key add -
+# apt-get update</pre>
+
+so instead of backports, i'm going to attempt to use the kernel config for 2.6.29-xs5.5.0.14 on 2.6.32.
+<pre># apt-get install linux-source-2.6
+# cd /usr/src; tar xjf linux-source-2.6.32.tar.bz2
+# ln -s linux-source-2.6.32 linux
+# cd linux
+# cp /boot/config-2.6.29-xs5.5.0.14 .config</pre>
+
+now to configure shit
+<pre># make oldconfig</pre>
+
+i just basically answered all the default choices it gave me
+<pre># make menuconfig</pre>
+
+Include "Networking support > Networking options > Network packet filtering framework (Netfilter)" and follow it to enable IPTables.
+
+Include "Device Drivers > Network device support > Universal TUN/TAP device Edriver support"
+
+now build. setting CONCURRENCY_LEVEL to the number of CPUs available will help keep the machine sane, I guess.
+<pre># export CONCURRENCY_LEVEL="1"
+# time make-kpkg --initrd --append-to-version=-custom kernel_image</pre>
+
+now wait.
+
+after 11 minutes and 27.498 seconds:
+<pre># cd /usr/src
+# dpkg -i linux-image-2.6.32-custom-xs5.5.0.14_2.6.32-custom-xs5.5.0.14-10.00.Custom_i386.deb
+# reboot</pre>
+
+lo and behold, the machine came up, and openvpn worked.
