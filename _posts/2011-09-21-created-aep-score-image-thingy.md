@@ -17,7 +17,11 @@ meta:
 ---
 i was looking at [my profile](http://last.fm/user/urble) today on
 [last.fm](http://last.fm) and noticed that the image i had from
-[davethemoonman](http://last.fm/user/davethemoonman) was no longer working. i guess he had dns trouble or something. knowing the aep was pretty simple, i decided to make my own because i thought it was neat.
+[davethemoonman](http://last.fm/user/davethemoonman) was no longer
+working. i found out in the [last.fm
+forums](http://www.last.fm/group/We+Don%27t+Have+Exponential+Profiles/forum/32066/_/1010482/1#f16050270)
+that he had dns trouble or something. knowing the aep was pretty simple,
+i decided to make my own because i thought it was neat.
 
 all the info i needed to replicate it was [documented
 here](http://www.last.fm/group/We%2BDon%2527t%2BHave%2BExponential%2BProfiles/journal/2006/05/4/129052)
@@ -36,7 +40,7 @@ function make_link(){
 </script>
 <form action="#">
 <p>last.fm username: <input type="text" id="username" /><input type="submit" value="make bbcode" onclick="make_link(); return false" /></p>
-<p><textarea id="textbox" rows="3" cols="50">insert username</textarea></p>
+<p><textarea id="textbox" rows="3" cols="50">bbcode will appear here</textarea></p>
 <p id="derp" style="display:none">aep image: <img id="aep" /></p>
 </form>
 
