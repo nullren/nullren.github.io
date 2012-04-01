@@ -27,6 +27,8 @@ all the info i needed to replicate it was [documented
 here](http://www.last.fm/group/We%2BDon%2527t%2BHave%2BExponential%2BProfiles/journal/2006/05/4/129052)
 by [C26000](http://last.fm/user/C26000).
 
+------------------------------
+
 ###### aep image link generator
 
 <script type="text/javascript">
