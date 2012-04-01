@@ -36,7 +36,7 @@ function make_link(){
 </script>
 <form action="#">
 <p>last.fm username: <input type="text" id="username" /><input type="submit" value="make bbcode" onclick="make_link(); return false" /></p>
-<p><textarea id="textbox" rows="3" cols="50"></textarea></p>
+<p><textarea id="textbox" rows="3" cols="50">insert username</textarea></p>
 <p id="derp" style="display:none">aep image: <img id="aep" /></p>
 </form>
 
