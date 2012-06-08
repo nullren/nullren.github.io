@@ -4,7 +4,6 @@ title: "setting up my keyboards (wip)"
 category: 
 tags: [linux, win, fun, derp, rawr]
 ---
-{% include JB/setup %}
 
 i used to be a mac user and apple keyboards are mostly the same as pc
 keyboards except the placement of the alt key. i've gotten very used to

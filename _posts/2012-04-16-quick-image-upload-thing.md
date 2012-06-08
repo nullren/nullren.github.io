@@ -4,8 +4,6 @@ title: "quick image upload thing"
 category: 
 tags: []
 ---
-{% include JB/setup %}
-
 # quick image uploader
 
 here are a couple text files i use to do things. the first one is called

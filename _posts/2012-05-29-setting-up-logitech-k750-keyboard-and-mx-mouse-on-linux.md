@@ -4,8 +4,6 @@ title: "setting up logitech k750 keyboard and mx mouse on linux"
 category: 
 tags: [linux, logitech, peripherals, win]
 ---
-{% include JB/setup %}
-
 this started off as really frustrating but turned out to be really
 simple. the problem is that these two devices use logitech's "unifying"
 technology where both devices can use the same usb dongle. the problem
