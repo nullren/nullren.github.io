@@ -5,7 +5,7 @@ category:
 tags: [linux, mdadm, raid, raid1, win, rawr, derp]
 ---
 this was very similar to the last post, but instead of just
-[adding another disk](/2012/06/20/hot-swapping-harddrives], i had to
+[adding another disk](/2012/06/20/hot-swapping-harddrives), i had to
 also *grow* the array so that the new disk would sync up instead of
 remain a spare. that was accomplished with the following command:
 
