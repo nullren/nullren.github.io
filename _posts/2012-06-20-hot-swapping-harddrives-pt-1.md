@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "hot swapping harddrives"
+title: "hot swapping harddrives (linux raid pt. 1)"
 category: 
 tags: [win, dumb, linux, raid, rawr]
 ---
