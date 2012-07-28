@@ -35,6 +35,10 @@ Then to watch it in mplayer, i just run the following command:
 
     get_iplayer --pid p00w2t4c --stdout --nowrite | mplayer -cache 512 -
 
+The `pid` comes from the last part of the url when you go to any of the
+streams on [the BBC
+website](http://www.bbc.co.uk/sport/olympics/2012/live-video).
+
 This means I can watch the Olympics live on my television.
 
 I would still like to figure out how to get the NBC 720p streams on my
