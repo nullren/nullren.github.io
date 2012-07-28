@@ -49,7 +49,7 @@ To watch it in MPlayer, I just run the following command:
     get_iplayer --pid p00w2t4c --stdout --nowrite | mplayer -cache 512 -
 
 The `pid` comes from the last part of the url when you go to any of the
-streams on 
+streams on the BBC's website.
 
 This means I can watch the Olympics live on my television.
 
