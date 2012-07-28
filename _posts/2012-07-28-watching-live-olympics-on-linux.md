@@ -24,3 +24,18 @@ Now I get the BBC streams live and I am happy--for now.
 
 I would prefer to make the NBC site work since it had 720p and 1080p
 streams.
+
+**Update**
+
+I installed latest git version of
+[get_iplayer](http://www.mail-archive.com/get_iplayer@lists.infradead.org/msg03103.html)
+since it was recently updated.
+
+Then to watch it in mplayer, i just run the following command:
+
+    get_iplayer --pid p00w2t4c --stdout --nowrite | mplayer -cache 512 -
+
+This means I can watch the Olympics live on my television.
+
+I would still like to figure out how to get the NBC 720p streams on my
+TV.
