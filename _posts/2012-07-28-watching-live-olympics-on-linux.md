@@ -17,6 +17,12 @@ I spent a couple hours trying to figure out why nbcolympics.com worked
 fine under Mint 13 and got nowhere. I installed the mint-flashplugin-11
 package on my Arch desktop -- nothing.
 
+Well, I found out what was wrong. Flash requires I have `hal` running,
+which needed to be installed from the AUR. A reddit comment linked to a
+blog which linked to [this Adobe help
+page](http://helpx.adobe.com/x-productkb/multi/flash-player-11-problems-playing.html)
+saying so. Now NBC streaming works.
+
 #### Using BBC ####
 Then I came across [this reddit
 post](http://www.reddit.com/r/olympics/comments/xaj75/wanna_watch_the_bbc_live_stream/)
@@ -54,4 +60,5 @@ streams on the BBC's website.
 This means I can watch the Olympics live on my television.
 
 I would still like to figure out how to get the NBC 720p streams on my
-TV.
+TV and without all the ads. Until then, I think I may favor the BBC
+stream since it gives me exactly what I want to see.
