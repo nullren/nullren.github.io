@@ -21,3 +21,7 @@ homeomorphism.
 
 If we have an $n$-dimensional topological manifold, $X$, when is $f\: X
 \to \mathbb{R}^n$ smooth?
+
+We have that there is a chart $(U, \phi)$, so we want a function $f
+\circ \phi^{-1} \colon \tilde{U} \to \mathbb{R}^n$ because $\tilde{U}
+\subseteq \mathbb{R}^n$ or something.
