@@ -22,5 +22,16 @@ splits $\mathbb{R}^2$ into connected components.
 Jordon-Brower Theorem is the generalization that a simple closed $n-1$
 dimensional manifold splits $\mathbb{R}^n$.
 
-3. Euler Characteristic of a manifold $M$, $\chi(M)$ ($\chi = V - E + F). For example
+3. Euler Characteristic of a manifold $M$, $\chi(M)$ ($\chi = V - E + F$). For example
 $\chi(\mathbb{R}) = 1$, $\chi(S^2) = 2$, $\chi(T^2) = 0$.
+
+Hedgehog Theorem says $S^2$ cannot be combed. This is the same as saying
+there is always a still point or there is always a point with no wind on
+earth.
+
+A compact manifold $M$ can be combed if and only if $\chi(M) = 0$, e.g.
+$T^2$ can be combed.
+
+Fixed point problems. Then $f \: M \to M$ a smooth deformation of the
+identity, if $\chi(M) \neq 0$, then $f$ has at least one fixed point. A
+circle rotated by $\theta$ has no fixed points.
