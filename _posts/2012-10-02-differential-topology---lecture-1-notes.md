@@ -64,7 +64,7 @@ disjoint union of path connected manifolds.
 3. They are paracompact.
 
 > **Definition** $M$ is *locally compact* iff $\forall x \in M$, $\exists C \subseteq
-> M$ and $C$ compact such that $C \supsetneq Nbd^{\textrm{open}}(x)$.
+> M$ and $C$ compact such that $C \supsetneq N^{\textrm{open}}(x)$.
 
 > **Definition** A cover $\mathscr{B}$ of a space $M$ is a *refinement*
 > of $\mathscr{A}$ iff $\forall B \in \mathscr{B}$, $\exists A \in \mathscr{A}$ where $B \subseteq A$.
