@@ -15,7 +15,7 @@ homeomorphism.
 > **Definition** A *topological manifold with boundary* is Hausdorff and
 > second countable such that $\forall x \in M$, $\exists U = N(x)$ such
 > that $U$ is homeomorphic to $\~U \subseteq \mathbb{H}^n$ (half space,
-> $\mathbb{H} = \left{ x \in \mathbb{R} | x \ge 0 \right}$).
+> $\mathbb{H} = \left\{ x \in \mathbb{R}\, |\, x \ge 0 \right\}$).
 
 ### Smooth Manifolds
 
