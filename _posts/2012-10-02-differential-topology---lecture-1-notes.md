@@ -44,10 +44,24 @@ circle rotated by $\theta$ has no fixed points.
 > 2. $M$ is second-countable,
 > 3. $M$ is locally euclidean.
 
-> **Definition** A *chart* on $M$ is a pair $(U,f)$, $U \subset M$ such
-> that $f \: U \to V \subset \mathbb{R}^n$ and $V$ is open.
+> **Definition** A *chart* on $M$ is a pair $(U,f)$, $U \subseteq M$ such
+> that $f \: U \to V \subseteq \mathbb{R}^n$ and $V$ is open.
 
 > **Example** Two rays in $\mathbb{R}^2$ shooting out from the origin.
 > Let $f$ be the projection of these two lines to $\mathbb{R}$.
 
 Examples of spaces that are not manifolds.
+
+### Properties of Topological Manifolds
+
+1. Locally euclidean $\implies$ locally path connected $\implies$
+disjoint union of path connected manifolds.
+
+   Topologist's Sine Curve is connected but not path connected.
+
+2. They are locally compact, ie $\forall x \in M$, $\exists C \subseteq
+M$ and $C$ compact such that $C \supsetneq Nbd(x)$.
+
+3. They are paracompact, ie every open cover $\mathscr{A}$ has a locally
+finite refinement, ie $\exists \mathscr{B}$-open cover such $\forall
+B \in \mathscr{B}$, $\exists A \in \mathscr{A}$ where $B \subseteq A$.
