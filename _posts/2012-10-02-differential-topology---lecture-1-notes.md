@@ -59,9 +59,19 @@ disjoint union of path connected manifolds.
 
    Topologist's Sine Curve is connected but not path connected.
 
-2. They are locally compact, ie $\forall x \in M$, $\exists C \subseteq
-M$ and $C$ compact such that $C \supsetneq Nbd(x)$.
+2. They are locally compact
 
-3. They are paracompact, ie every open cover $\mathscr{A}$ has a locally
-finite refinement, ie $\exists \mathscr{B}$-open cover such $\forall
-B \in \mathscr{B}$, $\exists A \in \mathscr{A}$ where $B \subseteq A$.
+> **Definition** $M$ is *locally compact* iff $\forall x \in M$, $\exists C \subseteq
+M$ and $C$ compact such that $C \supsetneq Nbd^{\textrm{open}}(x)$.
+
+3. They are paracompact.
+
+> **Definition** $M$ is *paracompact* iff every open cover $\mathscr{A}$ has a locally
+finite refinement.
+
+> **Definition** A cover $\mathscr{B}$ of a space $M$ is a *refinement*
+> of $\mathscr{A}$ iff $\forall B \in \mathscr{B}$, $\exists A \in \mathscr{A}$ where $B \subseteq A$.
+
+> **Definition** $M$ is *locally finite* iff $\forall x \in M$, $\exists
+> U \subseteq M$ open such that only finite members of an open cover $\mathscr{B}$
+> intersect $U$ nonemptily.
