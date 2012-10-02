@@ -38,9 +38,16 @@ circle rotated by $\theta$ has no fixed points.
 
 ### Topological Manifolds
 
-> **Definition** An $n$-dimensional *topological manifold* is a
+> **Definition** An $n$-dimensional *topological manifold*, $M$, is a
 > topological space such that:
 > 1. $M$ is Hausdorff,
 > 2. $M$ is second-countable,
 > 3. $M$ is locally euclidean.
 
+> **Definition** A *chart* on $M$ is a pair $(U,f)$, $U \subset M$ such
+> that $f \: U \to V \subset \mathbb{R}^n$ and $V$ is open.
+
+> **Example** Two rays in $\mathbb{R}^2$ shooting out from the origin.
+> Let $f$ be the projection of these two lines to $\mathbb{R}$.
+
+Examples of spaces that are not manifolds.
