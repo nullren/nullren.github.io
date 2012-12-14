@@ -20,4 +20,4 @@ This amounts to showing the following are true:
 * $A - (B \cup C) = (A - B) \cap (A - C)$
 * $A - (B \cap C) = (A - B) \cup (A - C)$
 
-$A \cap (B \cup C) = \{ x \mid x \in A \mbox{ and } x \in (B \cup C) \}$
+$A \cap (B \cup C) = \\{ x \mid x \in A \mbox{ and } x \in (B \cup C) \\}$
