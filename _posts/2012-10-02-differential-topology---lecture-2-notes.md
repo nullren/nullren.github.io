@@ -24,4 +24,5 @@ If we have an $n$-dimensional topological manifold, $X$, when is $f\: X
 
 We have that there is a chart $(U, \phi)$, so we want a function $f
 \circ \phi^{-1} \colon \tilde{U} \to \mathbb{R}^n$ because $\tilde{U}
-\subseteq \mathbb{R}^n$ or something.
+\subseteq \mathbb{R}^n$ or something. $f$ will be smooth if $\phi^{-1}$
+is smooth.
