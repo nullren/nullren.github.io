@@ -73,9 +73,25 @@ Then create the CA cert:
       -keyout private/cakey.pem -out cacert.pem \
       -config ../openssl.cnf
 
-## Generating CRL
+### Generating CRL
 
     openssl ca -config ../openssl.cnf -gencrl -out crl.pem
+
+### Adding CA to `/etc/certs`
+
+    cp cacert.pem /usr/local/share/ca-certificates/omgren.com/omgren.com_SSLCA.crt
+    update-ca-certificates -v -f
+
+I saw `Adding debian:omgren.com_SSLCA.pem` so I was happy. Then I had to add the CA cert to Chrome and my phone.
+
+### Adding CA to Chrome
+
+This was really easy, just download the CA cert, then go into `Settings > Advanced Settings > HTTPS/SSL > Manage Certificates
+> Authorities > Import`.
+
+### Adding CA to Android
+
+This was easy on Android 4.0 (and not possible on 2.3). Just download the CA cert and it's put into the system keystore!
 
 ## Creating Tomcat SSL Keys
 
@@ -121,16 +137,39 @@ Now copy it and the CA cert back to Tomcat
 
 I had to remove everything except the certificate at the end fo `awesome.omgren.com_cert.pem` for it to work.
 
-## Adding CA to `/etc/certs`
+The next important thing to do is to create the `truststoreFile` in tomcat. this was pretty easy, too.
 
-    cp cacert.pem /usr/local/share/ca-certificates/omgren.com/omgren.com_SSLCA.crt
-    update-ca-certificates -v -f
+    keytool -genkey -alias dummy -keyalg RSA -keystore truststore.jks
+    keytool -delete -alias dummy -keystore truststore.jks
+    keytool -import -v -trustcacerts -alias my_ca -file cacert.pem -keystore truststore.jks
 
-I saw `Adding debian:omgren.com_SSLCA.pem` so I was happy. Then I had to add the CA cert to Chrome and my phone.
+Then to make Tomcat use it, just enable it in the `server.xml`. Uncomment this `connector` block:
+
+    <Connector port="8443" protocol="HTTP/1.1" SSLEnabled="true"
+               maxThreads="150" scheme="https" secure="true"
+               keystoreFile="conf/ssl/awesome.jks" keystorePass="changeit"
+               truststoreFile="conf/ssl/truststore.jks" truststorePass="changeit"
+               clientAuth="true" sslProtocol="TLS" />
+
+New problem is I can't get android to use client certificates to connect to the page. So for the time being, I
+have to leave `clientAuth="false"`.
+
+## Creating Client SSL certificates
+
+    cd certs
+    openssl req -config ../../openssl.cnf -new -nodes -out user_req.pem -keyout ../private/users/user_key.pem
+    openssl ca -config ../../openssl.cnf -out user_cert.pem -infiles user_req.pem
+    cd ../private/users
+    openssl pkcs12 -export -out user.p12 -inkey user_key.pem -in ../../certs/user_cert.pem
+
+Then just download or otherwise send `user.p12` to the user to install into their browser. This worked on Chrome,
+this did *not* work on Android.
+
 
 ## Playing nicely with Android
 
-My first try was to just do a normal `HttpsURLConnection`, but I get this error:
+For now, because I can't install client certificates, I'm just trying to get plain SSL to work (`clientAuth="false"`).
+My first try was to just do a normal `HttpURLConnection`, but I get this error:
 
     javax.net.ssl.SSLHandshakeException: java.security.cert.CertPathValidatorException: Trust anchor for certification path not found.
 
