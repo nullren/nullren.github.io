@@ -73,11 +73,15 @@ Then create the CA cert:
       -keyout private/cakey.pem -out cacert.pem \
       -config ../openssl.cnf
 
+## Generating CRL
+
+    openssl ca -config ../openssl.cnf -gencrl -out crl.pem
+
 ## Creating Tomcat SSL Keys
 
 I just followed the Apache How-To for "Installing a Certificate from a Certificate Authority".
 
-    keytool -genkey -alias tomcat -keyalg RSA -keystore awesome-tomcat.jsk
+    keytool -genkey -alias tomcat -keyalg RSA -keystore awesome.jks
 
     Enter keystore password:  
     Re-enter new password: 
@@ -99,6 +103,29 @@ I just followed the Apache How-To for "Installing a Certificate from a Certifica
     Enter key password for <tomcat>
       (RETURN if same as keystore password):  
 
-    keytool -certreq -keyalg RSA -alias tomcat -file certreq.csr -keystore awesome-tomcat.jsk
+    keytool -certreq -keyalg RSA -alias tomcat -file certreq.csr -keystore awesome.jks
 
 Now copy the `certreq.csr` to the CA and sign it.
+
+    cp certreq.csr ~ren/ssl/omgren.com_CA/certs/awesome.omgren.com_req.pem
+
+    cd certs
+    openssl ca -config ../../openssl.cnf -in awesome.omgren.com_req.pem -out awesome.omgren.com_cert.pem
+
+Now copy it and the CA cert back to Tomcat
+
+    cp ~ren/ssl/omgren.com_CA/cacert.pem ~ren/ssl/omgren.com_CA/certs/awesome.omgren.com_cert.pem /etc/tomcat7/ssl
+
+    keytool -import -alias root -keystore awesome.jks -trustcacerts -file cacert.pem
+    keytool -import -alias tomcat -keystore awesome.jks -file awesome.omgren.com_cert.pem
+
+I had to remove everything except the certificate at the end fo `awesome.omgren.com_cert.pem` for it to work.
+
+## Adding CA to `/etc/certs`
+
+    cp cacert.pem /usr/local/share/ca-certificates/omgren.com/omgren.com_SSLCA.crt
+    update-ca-certificates -v -f
+
+I saw `Adding debian:omgren.com_SSLCA.pem` so I was happy. Then I had to add the CA cert to Chrome and my phone.
+
+
