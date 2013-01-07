@@ -86,8 +86,8 @@ I saw `Adding debian:omgren.com_SSLCA.pem` so I was happy. Then I had to add the
 
 ### Adding CA to Chrome
 
-This was really easy, just download the CA cert, then go into `Settings > Advanced Settings > HTTPS/SSL > Manage Certificates
-> Authorities > Import`.
+This was really easy, just download the CA cert, then go into 
+`Settings > Advanced Settings > HTTPS/SSL > Manage Certificates > Authorities > Import`.
 
 ### Adding CA to Android
 
