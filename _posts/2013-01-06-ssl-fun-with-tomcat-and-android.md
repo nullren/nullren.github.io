@@ -4,10 +4,7 @@ title: "SSL Fun with Tomcat and Android"
 category: 
 tags: [web, rawr, fml, java, android, tomcat, openssl]
 ---
-
-I followed instructions from these pages:
- * [Creating a CA with OpenSSL](http://www.freebsdmadeeasy.com/tutorials/freebsd/create-a-ca-with-openssl.php)
- * [Apache Tomcat 7 - SSL How-To](http://tomcat.apache.org/tomcat-7.0-doc/ssl-howto.html)
+I pieced together lots of things from Google results.
 
 ## Creating a CA
 
