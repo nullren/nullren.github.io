@@ -53,6 +53,15 @@ This was really easy, just download the CA cert, then go into
 
 This was easy on Android 4.0 (and not possible on 2.3). Just download the CA cert and it's put into the system keystore!
 
+It turns out you have to use BouncyCastle to create a truststore on android phones. I downloaded the [Bouncy Castle Provider](http://bouncycastle.org/download/bcprov-jdk16-145.jar) and then did the following command on my CA certificate:
+
+    keytool -importcert -v -trustcacerts -file ~/ssl/omgren.com_CA/cacert.pem \
+      -alias ca -keystore trust.bks \
+      -provider org.bouncycastle.jce.provider.BouncyCastleProvider \
+      -providerpath bcprov-jdk16-145.jar -storetype BKS
+
+This then was put inside `res/raw/` in my Android project directory. 
+
 ## Creating Tomcat SSL Keys
 
 I just followed the Apache How-To for "Installing a Certificate from a Certificate Authority".
@@ -133,3 +142,4 @@ My first try was to just do a normal `HttpURLConnection`, but I get this error:
 
     javax.net.ssl.SSLHandshakeException: java.security.cert.CertPathValidatorException: Trust anchor for certification path not found.
 
+This was fixed! I had to add my `user.p12` key and the `trust.bks` I made, into `res/raw/`. Then I could do the ManagerFactories with them.
