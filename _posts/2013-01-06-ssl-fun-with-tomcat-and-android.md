@@ -5,11 +5,9 @@ category:
 tags: [web, rawr, fml, java, android, tomcat, openssl]
 ---
 
-I have a few things I want to accomplish:
-
-1. I want to create a local CA with a certificate I can add to other devices and have them accept me.
-2. Have Tomcat authenticate users by their client certificates and checking it against a CRL.
-3. Have my Android app automatically create a client certificate if none exists.
+I followed instructions from these pages:
+ * [Creating a CA with OpenSSL](http://www.freebsdmadeeasy.com/tutorials/freebsd/create-a-ca-with-openssl.php)
+ * [Apache Tomcat 7 - SSL How-To](http://tomcat.apache.org/tomcat-7.0-doc/ssl-howto.html)
 
 ## Creating a CA
 
