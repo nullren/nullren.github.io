@@ -128,4 +128,9 @@ I had to remove everything except the certificate at the end fo `awesome.omgren.
 
 I saw `Adding debian:omgren.com_SSLCA.pem` so I was happy. Then I had to add the CA cert to Chrome and my phone.
 
+## Playing nicely with Android
+
+My first try was to just do a normal `HttpsURLConnection`, but I get this error:
+
+    javax.net.ssl.SSLHandshakeException: java.security.cert.CertPathValidatorException: Trust anchor for certification path not found.
 
