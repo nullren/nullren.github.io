@@ -67,4 +67,38 @@ Make a couple required files that don't make themselves:
     touch index.txt
     echo 1000 | tee serial | tee crlnumber
 
+Then create the CA cert:
 
+    openssl req -new -x509 -days 3650 -extensions v3_ca \
+      -keyout private/cakey.pem -out cacert.pem \
+      -config ../openssl.cnf
+
+## Creating Tomcat SSL Keys
+
+I just followed the Apache How-To for "Installing a Certificate from a Certificate Authority".
+
+    keytool -genkey -alias tomcat -keyalg RSA -keystore awesome-tomcat.jsk
+
+    Enter keystore password:  
+    Re-enter new password: 
+    What is your first and last name?
+      [Unknown]:  awesome.omgren.com
+    What is the name of your organizational unit?
+      [Unknown]:  awesome.omgren.com
+    What is the name of your organization?
+      [Unknown]:  omgren.com
+    What is the name of your City or Locality?
+      [Unknown]:  Los Angeles
+    What is the name of your State or Province?
+      [Unknown]:  California
+    What is the two-letter country code for this unit?
+      [Unknown]:  US
+    Is CN=awesome.omgren.com, OU=awesome.omgren.com, O=omgren.com, L=Los Angeles, ST=California, C=US correct?
+      [no]:  yes
+    
+    Enter key password for <tomcat>
+      (RETURN if same as keystore password):  
+
+    keytool -certreq -keyalg RSA -alias tomcat -file certreq.csr -keystore awesome-tomcat.jsk
+
+Now copy the `certreq.csr` to the CA and sign it.
