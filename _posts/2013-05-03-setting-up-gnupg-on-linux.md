@@ -144,4 +144,4 @@ afterwards, you provide your name and email address. you are then
 asked if you are okay with the information you have entered. take this
 moment to fix it. then select (O)kay.
 
-
+after you key gen finishes
