@@ -14,7 +14,7 @@ directory, so this worked out okay.
 
 first step, create a file suitably large to hold your filesystem
 
-    # dd if=/dev/zero of=derp bs=1M count=10
+    # dd if=/dev/urandom of=derp bs=1M count=10
 
 now mount it with `losetup` (`modprobe loop` if not loaded) so that we
 cna use it as a block device
