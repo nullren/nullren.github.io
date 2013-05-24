@@ -42,7 +42,7 @@ now open it.
 enter your password, now we have something like a normal disk device
 that we can format using whatever fs we want.
 
-    # mkfs.ext3 /dev/mapper/encstore
+    # mkfs.ext4 /dev/mapper/encstore
 
 this sets up the encrypted folder. from here i can mount it or
 whatever.
