@@ -24,7 +24,8 @@ this just tells me what the next available loop device is.
 
     # losetup /dev/loop0 derp 
 
-`/dev/loop0` is now like a normal block device. so lets set up dmcrypt
+`/dev/loop0` is now like a normal block device. so lets set up
+dmcrypt on it (`modprobe dm_crypt` if this is not loaded)
 
     # cryptsetup luksFormat /dev/loop0
 
