@@ -6,7 +6,9 @@ tags: [win, linux, dmcrypt, crypto, rawr]
 ---
 
 i wanted an encrypted folder that i could throw around like a file to
-easily backup in different ways.
+easily backup in different ways. `encfs` and `ecryptfs` are usually
+better solutions for most people. i wanted one file for my entire
+directory, so this worked out okay.
 
 ### set up
 
