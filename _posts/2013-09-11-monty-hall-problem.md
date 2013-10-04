@@ -47,3 +47,19 @@ door remaining assumed the 999/1000 chance of containing the prize.
 after this change in the game, all the students understood the
 original game. they correctly found that there was a 2/3
 chance the prize was in the other door.
+
+to do this more precisely, we set up a few things. let
+$ \Omega = \\{ (w_1, w_2) \mid w_i \in \\{1,2,3\\}, w_1 \neq w_2 \\} $
+where $w_1$ is the door the prize is behind and $w_2$ is the door
+monty hall opens. let $A_i = \\{ (w_1, w_2) \mid w_1 = i \\}$ be the
+event the prize is behind door $i$. the door monty hall picks depends
+on the door we pick, so let
+$D = \\{ (w_1, w_2) \mid w_2 = 3\\}$
+be the door monty hall opens, and let
+$E = \\{ (w_1, w_2) \mid w_2 = 1\\}$
+represent the doors monty hall cannot open. we will need set $E$
+later.
+
+we want to calculate 
+$$P(\\{ \textrm{prize is in door 2} \\}\mid\\{\textrm{we pick door 1
+and monty hall reveals door 3\\}).$$
