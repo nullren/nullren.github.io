@@ -35,7 +35,7 @@ by [C26000](http://last.fm/user/C26000).
 function make_link(){
   var username = document.getElementById("username");
   var imgurl = "http://aep.lolwut.net/" + escape(username.value) + ".png";
-  document.getElementById("textbox").value = "[url=http://blog.nullren.com/2011/09/21/created-aep-score-image-thingy][img]"+imgurl+"[/img][/url]";
+  document.getElementById("textbox").value = "[url=http://blog.omgren.com/2011/09/21/created-aep-score-image-thingy][img]"+imgurl+"[/img][/url]";
   document.getElementById("aep").src = imgurl;
   document.getElementById("derp").style.display = "block";
 }
