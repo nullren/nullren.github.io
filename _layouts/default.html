@@ -1,46 +1,46 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{{ page.title }}</title>
-        <meta name="viewport" content="width=device-width">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{{ page.title }}</title>
+    <meta name="viewport" content="width=device-width">
 
-        <!-- syntax highlighting CSS -->
-        <link rel="stylesheet" href="/blog/css/syntax.css">
+    <!-- syntax highlighting CSS -->
+    <link rel="stylesheet" href="/blog/css/syntax.css">
 
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="/blog/css/main.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/main.css">
 
-        <!-- mathjax -->
-        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    </head>
-    <body>
+    <!-- mathjax -->
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </head>
+  <body>
+    <div class="site">
+      <div class="header">
+        <h1 class="title"><a href="/">{{ site.name }}</a></h1>
+        <a class="extra" href="/blog">blog</a>
+      </div>
 
-        <div class="site">
-          <div class="header">
-            <h1 class="title"><a href="/">{{ site.name }}</a></h1>
-            <a class="extra" href="/blog">blog</a>
-          </div>
+        {{ content }}
 
-          {{ content }}
-
-          <div class="footer">
-            <div class="contact">
-              <p>
-                renning<br />
-                sloth herder<br />
-                ren [at] omgren dot com
-              </p>
-            </div>
-            <div class="contact">
-              <p>
-                <a href="https://github.com/nullren">github.com/nullren</a><br />
-                <a href="https://twitter.com/fishhairs">twitter.com/fishhairs</a><br />
-              </p>
-            </div>
-          </div>
+      <div class="footer">
+        <div class="contact">
+          <p>
+            renning<br />
+            sloth herder<br />
+            <a href="http://pgp.mit.edu/pks/lookup?op=get&search=0x54D08C5D2C4CA4D2">gpg --recv-keys 2c4ca4d2</a><br />
+            ren at omgren dot com
+          </p>
         </div>
-
-    </body>
+        <div class="contact">
+          <p>
+            <a href="https://github.com/nullren">github.com/nullren</a><br />
+            <a href="https://bitbucket.org/nullren">bitbucket.org/nullren</a><br />
+            <a href="https://twitter.com/fishhairs">twitter.com/fishhairs</a><br />
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

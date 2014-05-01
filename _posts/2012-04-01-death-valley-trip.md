@@ -15,9 +15,9 @@ entire valley from 10,000 feet up at roger's peak. my camera was just
 too bulky for me to carry around, but don't worry, i feel as though i am
 in no risk of forgetting any of the things i saw there. 
 
-[![titus canyon](/images/dv/s_titus_canyon.png)](/images/dv/titus_canyon.png)
+[![titus canyon](/blog/images/dv/s_titus_canyon.png)](/blog/images/dv/titus_canyon.png)
 
-[![coyote buddy](/images/dv/s_coyote_buddy.png)](/images/dv/coyote_buddy.png)
+[![coyote buddy](/blog/images/dv/s_coyote_buddy.png)](/blog/images/dv/coyote_buddy.png)
 
-[![aguereberry point](/images/dv/s_aguereberry_point.png)](/images/dv/aguereberry_point.png)
+[![aguereberry point](/blog/images/dv/s_aguereberry_point.png)](/blog/images/dv/aguereberry_point.png)
 
