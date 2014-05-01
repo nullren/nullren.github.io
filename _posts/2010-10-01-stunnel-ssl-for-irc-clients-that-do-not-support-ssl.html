@@ -1,0 +1,35 @@
+---
+layout: post
+title: ! 'stunnel: ssl for irc clients that do not support ssl'
+tags:
+- computa
+- double win
+- irc
+- ssl
+- stunnel
+- win
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  _wp_old_slug: ''
+---
+i installed stunnel and put this in /etc/stunnel/stunnel.conf
+
+<code>client = yes
+libwrap = no
+
+[someirc]
+accept = 54321
+connect = irc.someirc.net:6697
+</code>
+
+this is as simple as i could make it.
+
+then i just started stunnel and BAM! i pointed my irc client to connect to localhost:54321 and it connected me thru ssl. pretty sweet. especially since that config doesn't require any certs or anything. double win!
+
+<del>using arch, you have to remember your <code>/etc/hosts.allow</code> file. i added these:
+
+<code>stunnel: ALL
+networkirc: ALL</code></del>

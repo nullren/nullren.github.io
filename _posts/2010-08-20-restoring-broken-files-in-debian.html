@@ -1,0 +1,24 @@
+---
+layout: post
+title: restoring broken files in debian
+tags:
+- derp
+- i am dumb
+- linux
+- rawr
+- there's a better way
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  _wp_old_slug: ''
+---
+there is probably a better way to do this, but i messed up the init.d script for tomcat. to restore it i unpacked the deb and copied the fresh file over the broken one. tada.
+<pre># cp /var/cache/apt/archives/tomcat5.5_5.5.26-5_all.deb .
+# mkdir derp
+# dpkg -x tomcat5.5_5.5.26-5_all.deb ./derp/
+# cd derp
+# ls
+etc  usr  var
+# cp etc/init.d/tomcat5.5 /etc/init.d/</pre>

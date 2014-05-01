@@ -1,0 +1,66 @@
+---
+layout: post
+title: image caching
+tags:
+- cache
+- computa
+- images
+- php
+- rawr
+- web
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+---
+<p>so while i was making that aep thing, i had to think of a quick way to cache images. the aep script takes a little bit to pull data about a user and generate and image, so i wanted to minimize the number of times that is done. my first attempt was to do it strictly with php. i think it was a pretty good solution:</p>
+
+<pre>function dump_png($f){
+  $fp = fopen($f, "rb");
+  fpassthru($fp);
+  exit;
+}
+
+header("Content-Type: image/png");
+
+$user = isset($_GET['u']) ? $_GET['u'] : 'urble';
+$cachefile = "cache/$user.png";
+
+# check cache
+if( file_exists($cachefile) ){
+  $lt = strtotime('-1 day');
+  $ft = filemtime($cachefile);
+
+  if( $ft &gt; $lt )
+    dump_png($cachefile);
+  else
+    unlink($cachefile);
+}
+
+make_png(compute_aep($user), $cachefile);
+dump_png($cachefile);</pre>
+
+<p>but i wanted to nginx to cache things since i figure they do it better than me. so i just grabbed a few settings that probably could be better optimized, but i like how they work so far.</p>
+
+<pre># added these two lines
+fastcgi_cache_path /tmp/cache levels=1:2 keys_zone=AEPIMGS:10m inactive=1d;
+fastcgi_cache_key "$scheme$request_method$host$request_uri";
+
+server {
+
+    # ...stuff...
+
+    location ~ \.php$ {
+        include        fastcgi_params;
+        fastcgi_pass   127.0.0.1:9000;
+        fastcgi_index  index.php;
+        fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+
+        # and added these lines
+        fastcgi_cache AEPIMGS;
+        fastcgi_cache_valid 1d;
+    }
+}</pre>
+
+<p>but i probably don't know what i'm doing.</p>

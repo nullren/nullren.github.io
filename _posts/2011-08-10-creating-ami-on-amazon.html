@@ -1,0 +1,28 @@
+---
+layout: post
+title: creating ami on amazon
+tags:
+- amazon
+- ami
+- aws
+- linux
+- ubuntu
+- web
+- win
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+---
+<p>this was <em>stupid</em> simple starting from an EBS boot volume.</p>
+
+<h6>steps</h6>
+<ol>
+<li>launch an instance with an EBS boot volume. ubuntu has <a href="http://uec-images.ubuntu.com/releases/11.04/release/">lots of images</a>.</li>
+<li>make whatever changes you want to the volume. install, add, whatever services you need &mdash; configure them to start on boot (i just used rc.local).</li>
+<li>stop the instance.</li>
+<li>in the console, select "create image" from the instance actions pull-down menu.</li>
+</ol>
+
+<p>that's it. stupid simple.</p>

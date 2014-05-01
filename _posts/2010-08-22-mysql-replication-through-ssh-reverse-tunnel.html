@@ -1,0 +1,77 @@
+---
+layout: post
+title: mysql replication through ssh reverse tunnel
+tags:
+- fail
+- fixed it
+- fml
+- heartache
+- linux
+- mysql
+- rawr
+- ssh
+- win
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  _wp_old_slug: ''
+---
+well, connecting to a mysql db through a reverse tunnel was easy.
+
+on the host machine (in this case, my ircbot's vm) do something like:
+<pre>$ ssh -nNT -R 3307:localhost:3306 remote@machine</pre>
+
+now on the remote machine, i can test it is working by logging into mysql at that port:
+<pre>$ mysql -h localhost -P 3307 -u root -p</pre>
+all is well&mdash;<em>or so i thought</em>.
+
+after configuring mysql to be a replication master in typical fashion, i enabled binlogs, set the binlog databases and gave it a server-id. something like this was added to the <code>mysqld</code> section of my <code>my.cnf</code>:
+<pre>log-bin
+
+binlog-do-db = awesome
+binlog-do-db = awesomest
+
+binlog-ignore-db = mysql
+binlog-ignore-db = test
+
+server-id   = 1</pre>
+gave <code>mysqld</code> a restart.
+
+then i added a replication user - note the <code>@'%'</code>
+<pre>mysql> grant replication slave on *.* to 'repuser'@'%' identified by 'awesomepassword';</pre>
+
+last thing to do was just make a dump of my databases. since they're small, i can do this.
+<pre>$ mysqldump --databases --add-drop-database awesome awesomest &gt;awesome_dump.sql</pre>
+
+i copied <code>awesome_dump.sql</code> to the slave machine. i shut down <code>mysqld</code> first and changed the <code>server-id</code> in the <code>my.cnf</code>
+<pre>server-id   = 2</pre>
+then i started up mysql and dumped the databases into it
+<pre>$ sudo /etc/rc.d/mysqld start
+$ mysql -uroot -p &lt;awesome_dump.sql</pre>
+
+then i had to actually start replication in <code>mysql</code>
+<pre>mysql&gt; change master to 
+    -&gt; MASTER_HOST='localhost', 
+    -&gt; MASTER_PORT=3307, 
+    -&gt; MASTER_USER='repuser', 
+    -&gt; MASTER_PASSWORD='awesomepassword', 
+    -&gt; MASTER_LOG_FILE='ircbot-bin.000002', 
+    -&gt; MASTER_LOG_POS=106;
+Query OK, 0 rows affected (0.01 sec)
+mysql&gt; slave start;
+Query OK, 0 rows affected (0.01 sec)</pre>
+
+then i check <code>show slave status</code> to make sure everything was okay
+<pre>error connecting to master 'repuser@localhost:3307'</pre>
+fml.
+
+when i first set this up, i created my replication user as <code>'repuser'@'%'</code>. normally that is fine, but in the default installation of mysql on arch linux, there are anonymous users. so logging in as <code>'repuser'@'<b>localhost</b>'</code>, it actually logged me in as <code>''@'localhost'</code> instead of <code>'repl'</code>. joy. 
+
+there are two ways to fix this:<ul>
+<li>create the user <code>'repuser'@'localhost'</code></li>
+<li>remove anonymous users</li>
+</ul>
+
+i did both. all is well again in the land of nool.
