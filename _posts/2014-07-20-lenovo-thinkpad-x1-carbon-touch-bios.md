@@ -5,6 +5,9 @@ category:
 tags: []
 ---
 
+the `gruj11us.iso` bios update cd was enough to fix my laptop and
+allow suspend to work normally.
+
 since this laptop does not come with an optical drive to use a cd, i
 had to use flash. for some reason, the iso images provided by lenovo
 cannot be written to usb drives like as has now become normal. so, we
@@ -36,9 +39,21 @@ providing links to the binaries and their sha1sums so that hopefully
 people will not struggle with something that was actually pretty
 simple.
 
+###### mirrors
+
+* [biosupdate.img](/bin/biosupdate.img)
+* [geteltorito.pl](/bin/geteltorito.pl)
+* [gruj11us.iso](/bin/gruj11us.iso)
+
+i am just mirroring these until someone tells me not to. but really,
+one would only need to download the `biosupdate.img` and then `dd`
+that to their usb drive.
+
+here are the SHA1 sums of the files.
+
 ```
-7d356fc04a87250831540f1871fc323c60b7a655 [biosupdate.img](/bin/biosupdate.img)
-65714e678c07158399c25c54db617dfca1ae8d92 [geteltorito.pl](/bin/geteltorito.pl)
-fd13aa94bff82e6df9c6cefd8ad002af78958c8b [gruj11us.iso](/bin/gruj11us)
+7d356fc04a87250831540f1871fc323c60b7a655  biosupdate.img
+65714e678c07158399c25c54db617dfca1ae8d92  geteltorito.pl
+fd13aa94bff82e6df9c6cefd8ad002af78958c8b  gruj11us.iso
 ```
 
