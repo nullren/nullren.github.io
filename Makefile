@@ -27,9 +27,12 @@ endif
 	@if [ -f "$(FILENAME)" ]; then echo file "$(FILENAME)" already exists! && false; fi
 
 # load it with defaults
-	@echo ---                > "$(TEMPFILE)"
-	@echo title: "$(title)" >> "$(TEMPFILE)"
-	@echo ---               >> "$(TEMPFILE)"
+	@echo ---                  > "$(TEMPFILE)"
+	@echo layout: post        >> "$(TEMPFILE)"
+	@echo title: \"$(title)\" >> "$(TEMPFILE)"
+	@echo category:           >> "$(TEMPFILE)"
+	@echo tags: \[\]          >> "$(TEMPFILE)"
+	@echo ---                 >> "$(TEMPFILE)"
 
 # edit it
 	@vim "$(FILENAME)" "+:r $(TEMPFILE)"
