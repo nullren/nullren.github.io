@@ -1,5 +1,8 @@
 ---
-title: lenovo thinkpad x1 carbon touch bios update on linux
+layout: post
+title: "lenovo thinkpad x1 carbon touch bios update on linux"
+category:
+tags: []
 ---
 
 since this laptop does not come with an optical drive to use a cd, i
