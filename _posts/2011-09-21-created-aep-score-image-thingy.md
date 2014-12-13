@@ -34,8 +34,8 @@ by [C26000](http://last.fm/user/C26000).
 <script type="text/javascript">
 function make_link(){
   var username = document.getElementById("username");
-  var imgurl = "http://aep.lolwut.net/" + escape(username.value) + ".png";
-  document.getElementById("textbox").value = "[url=http://aep.lolwut.net/][img]"+imgurl+"[/img][/url]";
+  var imgurl = "http://aep.omgren.com/" + escape(username.value) + ".png";
+  document.getElementById("textbox").value = "[url=http://aep.omgren.com/][img]"+imgurl+"[/img][/url]";
   document.getElementById("aep").src = imgurl;
   document.getElementById("derp").style.display = "block";
 }
