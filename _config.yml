@@ -1,3 +1,4 @@
 name: omgren.com
 markdown: redcarpet
 highlighter: pygments
+exclude: [Makefile]

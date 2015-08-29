@@ -9,7 +9,7 @@ clean:
 	@echo cleaned.
 
 install: clean build
-	@rsync -ravz --exclude Makefile --delete --delete-excluded _site/ princess:/srv/http/omgren.com/www/blog/
+	@rsync -ravz --delete --delete-excluded _site/ puppy:/srv/http/omgren.com/html/blog/
 	@echo installed html files.
 
 NAME:=$(shell cut -d' ' -f1-6 <<< "$(title)" | tr -d '[:cntrl:][:punct:]' | tr -c '[:alnum:]' '[-*]' | tr A-Z a-z)
