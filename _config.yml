@@ -2,3 +2,4 @@ name: omgren.com
 markdown: redcarpet
 highlighter: pygments
 exclude: [Makefile]
+permalink: /blog/:year/:month/:day/:title.html

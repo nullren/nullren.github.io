@@ -1,13 +1,54 @@
----
-layout: default
-title: omgren.com - blog
----
-
-<div id="home">
-  <h1>blog posts</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
-    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="/blog{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
-</div>
+<html>
+<head>
+<title>renning's personal thing</title>
+<style type="text/css">
+body {
+  background: url(/istolethisgraybackgroundimagefromgrsites.jpg);
+  font: 12pt "Comic Sans", "Comic Sans MS", sans-serif;
+}
+img#me {
+-moz-transform: scale(-1, 1);
+-webkit-transform: scale(-1, 1);
+-o-transform: scale(-1, 1);
+transform: scale(-1, 1);
+filter: FlipH;
+}
+img#me:hover {
+-moz-transform: scale(1, 1);
+-webkit-transform: scale(1, 1);
+-o-transform: scale(1, 1);
+transform: scale(1, 1);
+filter: none;
+}
+</style>
+</head>
+<body>
+<h1>renning's personal thing</h1>
+<img src="/lulskull.png" alt="ME!!" id="me" />
+<hr />
+<h3>topics that interest me</h3>
+<ul>
+<li>mathematics</li>
+<li><a href="http://github.com/nullren/">programming</a></li>
+<li>astronomy</li>
+<li>cryptography</li>
+<li>stupid <a href="http://vimeo.com/renning">videos</a></li>
+</ul>
+<p>sometimes i write about them <a href="/blog">in my blog</a>.</p>
+<h3>topics that interest me less</h3>
+<ul>
+<li>day trading</li>
+<li>religion</li>
+<li><a href="http://twitter.com/fishhairs">tweeting</a></li>
+<li>politics</li>
+</ul>
+<p>i don't usually write about these in my blog.</p>
+<h3>topics i have no interest in whatsoever</h3>
+<ul>
+<li>cheese</li>
+</ul>
+<hr />
+<footer>Last updated: lolwut?</footer>
+<script src="http://t1.extreme-dm.com/f.js" id="eXF-omgren-0" async defer></script>
+</body>
+</html>
