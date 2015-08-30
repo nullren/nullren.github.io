@@ -36,3 +36,6 @@ endif
 
 # edit it
 	@vim "$(FILENAME)" "+:r $(TEMPFILE)"
+
+# add it with git
+	@git add "$(FILENAME)"
