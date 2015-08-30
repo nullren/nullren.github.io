@@ -17,9 +17,8 @@ in my .xinitrc
 
 and then i installed the following on archlinux
 
-    fcitx
+    fcitx-im
     fcitx-googlepinyin
     fcitx-configtool
-    fcitx-gtk2
 
-fcitx-gtk2 was required to get it to work in things like firefox.
+fcitx-im installs a few packages covering gtk and qt.
