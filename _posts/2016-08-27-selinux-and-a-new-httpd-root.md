@@ -12,10 +12,10 @@ existing nginx config directory, so this isn't much of an issue. However, I
 have somewhat standardized on the `/srv/<protocol>` pattern for storing files.
 This requires usually adding it to the selinux context pattern.
 
-  sudo /usr/sbin/semanage fcontext -a -t httpd_config_t "/etc/nginx(/.*)?"
-  sudo /usr/sbin/semanage fcontext -a -t httpd_sys_content_t "/srv/http(/.*)?"
+    sudo /usr/sbin/semanage fcontext -a -t httpd_config_t "/etc/nginx(/.*)?"
+    sudo /usr/sbin/semanage fcontext -a -t httpd_sys_content_t "/srv/http(/.*)?"
 
 Afterwards, I should be able to then restore context for the files when I add new ones.
 
-  sudo restorecon -Rv /etc/nginx
-  sudo restorecon -Rv /srv/http/
+    sudo restorecon -Rv /etc/nginx
+    sudo restorecon -Rv /srv/http/
