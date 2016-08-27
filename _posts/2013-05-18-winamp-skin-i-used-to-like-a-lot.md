@@ -12,6 +12,6 @@ here](http://www.winamp.com/skin/act2-finale-v5/145506)).
 here are just a couple files taken for that page so that i always have
 a copy.
 
-![iamge](/images/Act2_Finale_v5.jpg)
+![iamge](/blog/images/Act2_Finale_v5.jpg)
 
-download [it here](/bin/Act2_Finale_v5.wsz)
+download [it here](/blog/bin/Act2_Finale_v5.wsz)
