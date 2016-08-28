@@ -1,31 +1,24 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width">
-
-    <title>{{ page.title }}</title>
-
-    <!-- syntax highlighting CSS -->
-    <link rel="stylesheet" href="/css/syntax.css">
-  </head>
-  <body>
-    <div class="site">
-      <div class="header">
-        <h1 class="title"><a href="/">{{ site.name }}</a></h1>
-        <a class="extra" href="/blog/">blog</a>
-      </div>
-        {{ content }}
-      <div class="footer">
-        <div class="contact">
-          <p>ren at omgren dot com
-          <br><a href="https://keybase.io/renning">keybase id renning</a>
-        </div>
-        <div class="contact">
-          <p>updated {{ site.time }}</p>
-        </div>
-      </div>
-    </div>
-  </body>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width">
+<title>{{ page.title }}</title>
+<!-- syntax highlighting CSS -->
+<link rel="stylesheet" href="/css/syntax.css">
+</head>
+<body>
+<nav>
+<a href="/">{{ site.name }}</a>
+<a href="/blog/">blog</a>
+</nav>
+<hr/>
+{{ content }}
+<hr/>
+<footer>
+<p>ren at omgren dot com<br><a href="https://keybase.io/renning">keybase id renning</a>
+<p>updated <time>{{ site.time }}</time>
+</footer>
+</body>
 </html>
