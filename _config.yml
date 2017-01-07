@@ -1,3 +1,4 @@
 name: omgren.com
 exclude: [Makefile]
 permalink: /blog/:year/:month/:day/:title.html
+url: https://omgren.com
