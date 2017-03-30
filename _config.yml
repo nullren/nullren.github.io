@@ -1,4 +1,4 @@
-name: omgren.com
+name: nullren.github.io
 exclude: [Makefile]
 permalink: /blog/:year/:month/:day/:title.html
-url: https://omgren.com
+url: https://nullren.github.io
