@@ -1,7 +1,7 @@
 default: build
 
 build:
-	@jekyll build
+	@bundle exec jekyll build
 	@echo built.
 
 clean:
