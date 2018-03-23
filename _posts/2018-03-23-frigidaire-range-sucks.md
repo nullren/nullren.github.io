@@ -5,7 +5,7 @@ category:
 tags: []
 ---
 
-Maybe I'll end up finding this page when I'm having trouble with my frickin frigidaire range. Back in November, I had this crazy beeping. I posted a couple videos on YouTube so I wouldn't sound totally crazy ([[1](https://www.youtube.com/watch?v=-ZANhrBjsPw),[2](https://www.youtube.com/watch?v=ottXZB-RMl4)]).
+Maybe I'll end up finding this page when I'm having trouble with my frickin frigidaire range. Back in November, I had this crazy beeping. I posted a couple videos on YouTube so I wouldn't sound totally crazy [[1](https://www.youtube.com/watch?v=-ZANhrBjsPw),[2](https://www.youtube.com/watch?v=ottXZB-RMl4)].
 
 I was able to find a replacement control board and eventually fix it.
 
