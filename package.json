@@ -1,0 +1,8 @@
+{
+  "name": "nullren.github.io",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:nullren/nullren.github.io.git",
+  "author": "Renning Bruns <chopflop@gmail.com>",
+  "license": "MIT"
+}
