@@ -42,6 +42,7 @@ tags: []
    ```
 
 6. The category with types `Void`, `()`, and `Bool` has the following morphisms:
+
    - **Id<sub>`Void`</sub>**: `Void` → `Void`
    - **absurd**: `Void` → `a`
    - **Id<sub>`()`</sub>**: `()` → `()`
@@ -52,3 +53,15 @@ tags: []
    - **Not<sub>`Bool`</sub>**: `Bool` → `Bool`
    - **True<sub>`Bool`</sub>**: `Bool` → `Bool`
    - **False<sub>`Bool`</sub>**: `Bool` → `Bool`
+
+   The weird thing here is why there are no morphisms _to_ `Void`. The
+   only reasons we can actually define functions with `Void` as input
+   is because `Void` is ∅. So we can use a variable to denote what
+   would go there, but there would never be anything to call it.
+   However, in defining a function with `Void` as output would require
+   use to either use an object in that set (which none exist) or a
+   function that takes a type that does exist and returns a `Void`
+   which none others exist. So... it's weird. At least with `()`, we
+   can actually define something to discard values, ie, do nothing.
+   That's not possible with `Void`, so the only arrows involving
+   `Void` are arrows leaving it.
