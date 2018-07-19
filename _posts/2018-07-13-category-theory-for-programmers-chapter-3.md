@@ -23,7 +23,7 @@ is related to _a_.
    1. One node, **v**, and no edges. There exists only one morphism,
       _1_<sub>**v**</sub>, the identity morphism.
    2. One node, **v**, and one directed edge, _f_. There exists the following
-      morphisms: _1_<sub>**v**</sub>, _f_, _f_<sup>2</sup>, ...
+      morphisms: _1_<sub>**v**</sub>, _f_, _f_ ∘ _f_, _f_ ∘ _f_ ∘ _f_, ...
    3. A graph with two nodes, **v**, **w**, and one edge _f_:**v** → **w**. There
       exists the following morphisms: _1_<sub>**v**</sub>, _f_,
       _1_<sub>**w**</sub>.
@@ -39,10 +39,12 @@ is related to _a_.
       can have subtypes that in disjoint subtype trees.
 3. (`Bool`, _AND_) is a monoid with `true` as identity. (`Bool`, _OR_) is a
    monoid with `false` as identity.
-4. (`Bool`, _AND_) as a category has the following morphisms:
-   _1_<sub>`Bool`</sub>, _t_:`b`↦`b` _AND_ `true`,
-   _f_: `b` ↦ `b` _AND_ `false`. Any compositions just get us back:
-   _t_ ∘ _f_ = _f_ ∘ _t_ = _f_ ∘ _f_ = _f_, _t_ ∘ _t_ = _t_.
+4. (`Bool`, _AND_) as a category has two morphisms:
+   1.  _1_<sub>`Bool`</sub> = _t_:`b`↦`b` _AND_ `true`,
+   2.  _f_: `b` ↦ `b` _AND_ `false`.
+   Any compositions just get us back to those:
+   1. _t_ ∘ _f_ = _f_ ∘ _t_ = _f_ ∘ _f_ = _f_,
+   2. _t_ ∘ _t_ = _t_ = _1_<sub>`Bool`</sub>.
 5. (ℤ/3ℤ, +) has morphisms (+ `0`) =
    _1_<sub>ℤ/3ℤ</sub>, (+ `1`), and (+ `2`) = (+ `1`) ∘ (+ `1`). There are no
    more morphisms as (+ `2`) ∘ (+ `1`) = (+ `0`).
