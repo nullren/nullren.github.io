@@ -54,14 +54,20 @@ tags: []
    - **True<sub>`Bool`</sub>**: `Bool` → `Bool`
    - **False<sub>`Bool`</sub>**: `Bool` → `Bool`
 
-   The weird thing here is why there are no morphisms _to_ `Void`. The
-   only reasons we can actually define functions with `Void` as input
-   is because `Void` is ∅. So we can use a variable to denote what
-   would go there, but there would never be anything to call it.
-   However, in defining a function with `Void` as output would require
-   use to either use an object in that set (which none exist) or a
-   function that takes a type that does exist and returns a `Void`
-   which none others exist. So... it's weird. At least with `()`, we
-   can actually define something to discard values, ie, do nothing.
-   That's not possible with `Void`, so the only arrows involving
-   `Void` are arrows leaving it.
+   The weird thing here is why there are no morphisms _to_ `Void`. For
+   this, we fall back to what a morphism is, and here it is a function
+   from a set to a set. This also means, that a function takes every
+   value of the domain to a unique value in the codomain. In the
+   instance of `Void`, we can define a function with `Void` as the
+   domain because even though `Void` is the empty set, we can still
+   define a function for all x in ∅ (even if there are none). However,
+   for a function that does have values, like `Bool`, for there to be
+   a function to `Void`, we are saying for all x in `{true, false}`
+   there **exists** a unique value in `Void` such that the
+   relationship holds. However, there is no value in `Void` so we
+   cannot have a function.
+
+   This differs with `()` which is a singleton set, eg `{👾}`. For this
+   we can define functions from `()` that send `👾` to some other
+   value, and similar, send all values from another domain to just one
+   value.
