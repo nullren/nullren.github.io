@@ -65,3 +65,51 @@ tags: []
    and \\(b\\). I guess you could think of this as the lim-sup of
    subsets of both \\(a\\) and \\(b\\). WHereas the coproduct would be
    lim-inf of sets that contain \\(a\\) and \\(b\\).
+
+4. Implement the equivalent of haskell `Either`.
+   ```java
+   public class HelloWorld {
+     public static class Either<L, R> {
+       public boolean isLeft;
+       public final L left;
+       public final R right;
+       private Either(L left, R right) {
+         this.isLeft = left != null;
+         this.left = left;
+         this.right = right;
+       }
+       public static <L, R> Either<L, R> left(L left) {
+         return new Either<>(left, null);
+       }
+       public static <L, R> Either<L, R> right(R right) {
+         return new Either<>(null, right);
+       }
+     }
+   
+     private static void test(Either<?, ?> something) {
+       if (something.isLeft) System.out.println("Given left value");
+       else System.out.println("Given right value");
+     }
+   
+     public static void main(String[] args) {
+       final Either<Integer, String> left = Either.left(37);
+       final Either<Integer, String> right = Either.right("Hello, World");
+       test(left);
+       test(right);
+     }
+   }
+   ```
+
+5. Showing `Either` is a better coproduct than `int` with the
+   following injections:
+   - `int i(int n) { return n; }`
+   - `int j(bool b) { return b ? 0 : 1; }`
+   So given the arrows `int → int` and `bool → int`, for `Either` to
+   be better, we need arrows `int → Either` and `bool → Either` via
+   some arrow `m:Either → int`...
+
+6. Given the two injections above, `i` and `j`, we have "too many"
+   injections in that we're surjective but not injective. So it's
+   possible for overlap as the domain is larger than the codomain (ie,
+   bool (2) + integers (2^64), integers (2^64)). So in this instance,
+   one is not really any better than another.
