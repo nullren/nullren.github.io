@@ -15,26 +15,53 @@ tags: []
    morphism from \\(y\\) to \\(y\\) and so \\(g \circ f =
    \mathrm{Id}_y\\). Therefore, \\(x \cong y\\). \\(\blacksquare\\)
 
-2. To figure out what the product of two objects in a poset would be
-   it helps to define what the relation in our poset would be. To take
-   a fun example, the relation \\(a \to b\)) is defined as \\(a\\) is
-   a descendent of \\(b\\). This forms a poset if we allow one to be a
-   descendent of oneself (identity arrow) and transitivity is quick to
-   see.
-
-   Let \\(c\\) be the product of \\(a\\) and \\(b\\). This means we
+2. Let \\(c\\) be the product of \\(a\\) and \\(b\\). This means we
    utilize the universal construction and get the relations:
    - \\(c \to a\\)
    - \\(c \to b\\)
-   - for any other \\(c' \to a\\) and \\(c' \to b\\), \\(c' \to c\\)
+   - for any other \\(c' \to a\\) and \\(c' \to b\\), we have that
+     \\(c' \to c\\)
 
-   Or in english, we have:
-   - \\(c\\) is a descendent of \\(a\\)
-   - \\(c\\) is a descendent of \\(b\\)
-   - for any other \\(c'\\) that is a descendent of \\(a\\) and
-     \\(b\\), we have that \\(c'\\) is a descendant of \\(c\\).
+   So the question here is, given a poset, what is the product of
+   objects? First step is to define what the relation of our poset
+   is.
 
-   So in this poset where arrows denote descendents, then the product
-   of two people would be the most recent descendant of the two. For a
-   father and a son, this would yield the son. But for two people who
-   are not descended from either, this would be one of their children.
+   Let \\(a \to b\\) if \\(a\\) is an ancestor of \\(b\\). Then our
+   relations read as:
+   - \\(c\\) is an ancestor of \\(a\\)
+   - \\(c\\) is an ancestor of \\(b\\)
+   - for any other ancestor \\(c'\\) of \\(a\\) and \\(b\\), we have
+     that \\(c'\\) is an ancestor of \\(c\\).
+   This makes \\(c\\) the most immediate ancestor of both \\(a\\) and
+   \\(b\\) (and does not exclude \\(c\\) being \\(a\\) or \\(b\\)).
+   However, this does not really work. If we look at the product of
+   two siblings, we are saying the mother is an ancestor of the father
+   and vice-versa.
+
+   In the comments, a relationship of \\(a\\) is the boss of \\(b\\)
+   was given by the author. In this case, we would have the product of
+   two teammates to be their immediate boss, but this also assumes no
+   person has more than one boss.
+
+   However, for a _real_ example that works, let \\(a \to b\\) be
+   given by \\(a,b \in \mathbf{Set}\\) and \\(a \subseteq b\\). Then
+   we have that the product of \\(a\\) and \\(b\\) is a subset \\(c\\)
+   such that for any other subset \\(c'\\), \\(c' \subseteq c\\). So
+   the product is the largest subset of both.
+
+   Another way to think about it is look looking at the composition of
+   morphisms from the text. \\(p' = p \circ m\\) which looks like
+   \\(c' \to b = c' \to c \to b\\) and it seems to say, for any path,
+   there's an object that you can insert between that works for both
+   \\(a\\) and \\(b\\).
+
+3. The coproduct of two elements in a poset would be flipping the
+   relations around. In the case of subsets, the product of
+   sets \\(a\\) and \\(b\\) would be the set \\(c\\) such that for any
+   other set \\(c'\\) that contains both \\(a\\) and \\(b\\), we have
+   that \\(c \subseteq c'\\), or that the product is the smallest set
+   that contains both \\(a\\) and \\(b\\). This is the opposite of the
+   product which is the largest set that is a subset of both \\(a\\)
+   and \\(b\\). I guess you could think of this as the lim-sup of
+   subsets of both \\(a\\) and \\(b\\). WHereas the coproduct would be
+   lim-inf of sets that contain \\(a\\) and \\(b\\).
