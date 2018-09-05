@@ -6,8 +6,8 @@ tags: []
 ---
 
 1. Let \\(x,y \in \mathbf{C}\\) be terminal objects. Because \\(x\\)
-   is terminal, \\(\exists f:y \to x\\) and because \\(y\\) is
-   terminal, \\(\exists g:x \to y\\). The composition \\(f \circ g:x
+   is terminal, \\(\exists! f:y \to x\\) and because \\(y\\) is
+   terminal, \\(\exists! g:x \to y\\). The composition \\(f \circ g:x
    \to x\\) is an arrow, but by definition, there is one and only one
    arrow from \\(x\\) to \\(x\\), and being an object in a category,
    it must have an identity, so \\(f \circ g = \mathrm{Id}_x\\).

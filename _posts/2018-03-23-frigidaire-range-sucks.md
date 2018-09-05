@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "frigidaire range sucks"
+title: "Frigidaire Range Sucks"
 category:
 tags: []
 ---
@@ -16,3 +16,8 @@ I was able to find a replacement control board and eventually fix it.
 Everything was fine, until last night when I noticed a bit of condensation on the control board... Then it started beeping and ultimately giving an awful F11ERR error. For the time being, I've shut off the stove from the circuit breaker.
 
 ![Manual recomendation](/images/frigidaire-manual.png)
+
+------
+
+I just wanted to update this as of September, 2018. We had bought a
+new range and replaced our Frigidaire.
