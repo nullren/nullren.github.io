@@ -29,8 +29,8 @@ registration for some mysterious "RCID" field (which probably stands
 for "Registration Card Issue Date").
 
 After finding the link to [request vehicle registration][2] online,
-requesting it only cost $2.  I thought I would give this a try---maybe
-there really was a typo or who knows. So I'll just pay the $2 and see
+requesting it only cost <span>$</span>2.  I thought I would give this a try---maybe
+there really was a typo or who knows. So I'll just pay the <span>$</span>2 and see
 what happens.
 
 In the section that showed my recent registration information, there
