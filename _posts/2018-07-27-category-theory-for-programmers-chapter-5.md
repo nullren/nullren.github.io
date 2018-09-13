@@ -5,6 +5,9 @@ category:
 tags: []
 ---
 
+Before starting, it can help to look at a few [examples of
+posets](https://en.wikipedia.org/wiki/Partially_ordered_set#Examples).
+
 1. Let \\(x,y \in \mathbf{C}\\) be terminal objects. Because \\(x\\)
    is terminal, \\(\exists! f:y \to x\\) and because \\(y\\) is
    terminal, \\(\exists! g:x \to y\\). The composition \\(f \circ g:x
