@@ -24,7 +24,7 @@ satisfying the following axioms:
 The exercises.
 
 1. Can we turn the `Maybe` type constructor into a functor by defining
-   `fmap _ _ = Nothing`?
+  `fmap _ _ = Nothing`?
 
   To verify this, all we need to do is verify the functor laws
   (axioms) hold. First start with composition.
@@ -59,62 +59,62 @@ The exercises.
   > morphisms into one, but it may never break things apart.
 
 2. Prove the functor laws for the `reader` functor. From the book,
-   turning the type constructor `(->) r` into a functor by defining
-   `fmap :: (a -> b) -> (r -> a) -> (r -> b)` which was given as `fmap
-   = (.)` (see that `r -> a -> b` in the first two arguments).
+  turning the type constructor `(->) r` into a functor by defining
+  `fmap :: (a -> b) -> (r -> a) -> (r -> b)` which was given as `fmap
+  = (.)` (see that `r -> a -> b` in the first two arguments).
 
   First step is showing composition holds. So, given two functions: `f
   :: a -> b` and `g :: b -> c` and `g . f :: a -> c` we have the
   following given some `h :: x -> a`:
 
-   ```
-   1. fmap (g . f) h = (.) (g . f) h (by definition of fmap)
-   2. fmap (g . f) h = (g . f) . h = g . (f . h) (by associativity of composition)
-   3. fmap (g . f) h = (g . f) . h = g . (fmap f h) (by def'n of fmap)
-   4. fmap (g . f) h = (g . f) . h = fmap g (fmap f h) (by def'n of fmap)
-   ```
+  ```
+  1. fmap (g . f) h = (.) (g . f) h (by definition of fmap)
+  2. fmap (g . f) h = (g . f) . h = g . (f . h) (by associativity of composition)
+  3. fmap (g . f) h = (g . f) . h = g . (fmap f h) (by def'n of fmap)
+  4. fmap (g . f) h = (g . f) . h = fmap g (fmap f h) (by def'n of fmap)
+  ```
 
-   Next step is to show identity is perserved. It is useful to know
-   (or remember or learn) that `id . x = x` and `x . id = x`.
+  Next step is to show identity is perserved. It is useful to know
+  (or remember or learn) that `id . x = x` and `x . id = x`.
 
-   ```
-   fmap id h = (.) id h
-             = id . h
-             = h
-             = id h
-   ```
+  ```
+  fmap id h = (.) id h
+            = id . h
+            = h
+            = id h
+  ```
 
-   So we're good. $\blacksquare$
+  So we're good. $\blacksquare$
 
 3. Implementing the reader functor is equivalent to implementing a
-   compose function as `fmap = (.)`. For that, we've already done in
-   chapter 1!
+  compose function as `fmap = (.)`. For that, we've already done in
+  chapter 1!
 
 4. Prove the functor laws for the list functor which was defined in
-   the chapeter as
-   ```haskell
-   data List a = Nil | Cons a (List a)
-   instance Functor List where
-     fmap _ Nil = Nil
-     fmap f (Cons x t) = Cons (f x) (fmap f t)
-   ```
+  the chapeter as
+  ```haskell
+  data List a = Nil | Cons a (List a)
+  instance Functor List where
+    fmap _ Nil = Nil
+    fmap f (Cons x t) = Cons (f x) (fmap f t)
+  ```
 
-   First step is showing composition. Starting with our base case,
-   `Nil`, we have
-   ```
-   1. fmap (f . g) Nil = Nil
-                       = fmap g Nil
-                       = fmap f (fmap g Nil)
-   ```
-   Because we've shown the base case `Nil`, all that remains is to
-   demonstrate this holds for `Cons x t` assuming it holds for `t`
-   (induction). 
-   ```
-   fmap (f . g) (Cons x t) = Cons ((f . g) x) (fmap (f . g) t)
-                           = Cons ((f . g) x) (fmap f (fmap g t)) (hypothesis)
-                           = Cons (f (g x)) (fmap f (fmap g t))   (def'n of composition)
-                           = fmap f (Cons (g x) (fmap g t))
-                           = fmap f (fmap g (Cons x t))
-   ```
-   $\blacksquare$
+  First step is showing composition. Starting with our base case,
+  `Nil`, we have
+  ```
+  1. fmap (f . g) Nil = Nil
+                      = fmap g Nil
+                      = fmap f (fmap g Nil)
+  ```
+  Because we've shown the base case `Nil`, all that remains is to
+  demonstrate this holds for `Cons x t` assuming it holds for `t`
+  (induction). 
+  ```
+  fmap (f . g) (Cons x t) = Cons ((f . g) x) (fmap (f . g) t)
+                          = Cons ((f . g) x) (fmap f (fmap g t)) (hypothesis)
+                          = Cons (f (g x)) (fmap f (fmap g t))   (def'n of composition)
+                          = fmap f (Cons (g x) (fmap g t))
+                          = fmap f (fmap g (Cons x t))
+  ```
+  $\blacksquare$
 
