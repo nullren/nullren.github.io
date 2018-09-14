@@ -14,11 +14,15 @@ definition of **a** *product*. I'll state it here exactly:
 
 > Let $\mathscr{A}$ be a category and $X,Y \in \mathscr{A}$. A
 > **product** of $X$ and $Y$ consists of an object $P$ and maps
+> 
 > * $p\_1:P \to X$
 > * $p\_2:P \to Y$
+>
 > with the property that $\forall A \in \mathscr{A}$ and $f\_1,f\_2$*
+>
 > * $f\_1:A \to X$
 > * $f\_2:A \to Y$
+>
 > there exists a *unique* map $\bar{f}:A \to P$ such that the graph
 > (if you drew the mappings) commutes. The maps $p\_1$ and $p\_2$ are
 > called **projections**.
