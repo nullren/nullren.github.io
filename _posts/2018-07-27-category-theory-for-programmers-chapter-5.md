@@ -8,6 +8,25 @@ tags: []
 Before starting, it can help to look at a few [examples of
 posets](https://en.wikipedia.org/wiki/Partially_ordered_set#Examples).
 
+Another thing that was probably a bit confusing but worth
+distinguishing because the chapter did not do too well at it was the
+definition of **a** *product*. I'll state it here exactly:
+
+> Let $\mathscr{A}$ be a category and $X,Y \in \mathscr{A}$. A
+> **product** of $X$ and $Y$ consists of an object $P$ and maps
+> * $p\_1:P \to X$
+> * $p\_2:P \to Y$
+> with the property that $\forall A \in \mathscr{A}$ and $f\_1,f\_2$*
+> * $f\_1:A \to X$
+> * $f\_2:A \to Y$
+> there exists a *unique* map $\bar{f}:A \to P$ such that the graph
+> (if you drew the mappings) commutes. The maps $p\_1$ and $p\_2$ are
+> called **projections**.
+
+What was not super clear was that a product on a partially ordered set
+is unique and only on posets are you able to call it **the** product.
+
+
 1. Let \\(x,y \in \mathbf{C}\\) be terminal objects. Because \\(x\\)
    is terminal, \\(\exists! f:y \to x\\) and because \\(y\\) is
    terminal, \\(\exists! g:x \to y\\). The composition \\(f \circ g:x
@@ -18,12 +37,12 @@ posets](https://en.wikipedia.org/wiki/Partially_ordered_set#Examples).
    morphism from \\(y\\) to \\(y\\) and so \\(g \circ f =
    \mathrm{Id}_y\\). Therefore, \\(x \cong y\\). \\(\blacksquare\\)
 
-2. Let \\(c\\) be the product of \\(a\\) and \\(b\\). This means we
+2. Let \\(c\\) be *a* product of \\(a\\) and \\(b\\). This means we
    utilize the universal construction and get the relations:
    - \\(c \to a\\)
    - \\(c \to b\\)
-   - for any other \\(c' \to a\\) and \\(c' \to b\\), we have that
-     \\(c' \to c\\)
+   - for any other \\(c' \to a\\) and \\(c' \to b\\), we have a unique
+     mapping \\(c' \to c\\)
 
    So the question here is, given a poset, what is the product of
    objects? First step is to define what the relation of our poset
