@@ -55,8 +55,8 @@ The exercises.
   > Functors must preserve the structure of a category. If you picture
   > a category as a collection of objects held together by a network
   > of morphisms, a functor is not allowed to introduce any tears into
-  > this fabric. It may smash objects together, it may glue multiple
-  > morphisms into one, but it may never break things apart.
+  > this fabric. **It may smash objects together, it may glue multiple
+  > morphisms into one, but it may never break things apart.**
 
 2. Prove the functor laws for the `reader` functor. From the book,
   turning the type constructor `(->) r` into a functor by defining
