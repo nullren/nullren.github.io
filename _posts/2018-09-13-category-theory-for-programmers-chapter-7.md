@@ -21,42 +21,33 @@ satisfying the following axioms:
   A''$ in $\mathscr{A}$;
 * $F(1\_A) = 1\_{F(A)}$ whenever $A \in \mathscr{A}$.
 
+Another thing that ended up being really helpful was considering what are our
+categories? When thinking about haskell, we start with the category of
+haskell types, **Hask**. The morphisms then are just haskell functions as
+they're all from some type to another type.
+
+So when thinking about functors in hasekll, our objects are elements of
+**Hask** and our morphisms are just haskell functions.
+
 The exercises.
 
 1. Can we turn the `Maybe` type constructor into a functor by defining
    `fmap _ _ = Nothing`?
  
    To verify this, all we need to do is verify the functor laws
-   (axioms) hold. First start with composition.
- 
-   Given two functions and their composition `f . g`, does applying
-   `fmap` give a composition?
- 
-   ```
-   1. fmap f _ = Nothing,
-      fmap g _ = Nothing,
-      fmap (g . f) _ = Nothing (by definition of fmap)
-   2. fmap (g . f) _ = fmap g Nothing (from 1)
-   3. fmap (g . f) _ = fmap g (fmap f Nothing) (from 1)
-   ```
-   
-   So we do get that composition holds. Next is for an identity
-   `id x = x`.
+   (axioms) hold. First start with identity.
+
+   The `Maybe` type constructor takes types from **Hask**, eg `x`, and turns them into new types, `Maybe x` which is just a subset of **Hask**. The identity function on these new types uses the same identity function from **Hask** which is why we can say `fmap id = id` in haskell. So for us to verify our "functor", we need to verify this equality.
  
    ```
-   1. fmap id _ = Nothing (by definition of fmap)
-   2. fmap id _ = id Nothing
+   1. fmap id (Just x) = Nothing (by definition of fmap)
+   2. fmap id (Just x) = id Nothing (by definition of id)
+   3. fmap id (Just x) = id (Just x) (by definition of fmap id)
+   4. id (Just x) = id Nothing (by 2 and 3)
+   5. (Just x) /= Nothing
    ```
  
-   This is kind of a stupid functor as it completely ignores any
-   objects of your type in the left-hand side and condenses everything
-   to a singleton. This was alluded to in the chapter.
- 
-   > Functors must preserve the structure of a category. If you picture
-   > a category as a collection of objects held together by a network
-   > of morphisms, a functor is not allowed to introduce any tears into
-   > this fabric. **It may smash objects together, it may glue multiple
-   > morphisms into one, but it may never break things apart.**
+  So we do not get that this definition of `fmap` gives us a functor.
 
 2. Prove the functor laws for the `reader` functor. From the book,
    turning the type constructor `(->) r` into a functor by defining
