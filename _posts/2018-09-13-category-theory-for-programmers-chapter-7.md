@@ -33,10 +33,10 @@ The exercises.
 
 1. Can we turn the `Maybe` type constructor into a functor by defining
    `fmap _ _ = Nothing`?
- 
+   
    To verify this, all we need to do is verify the functor laws
    (axioms) hold. First start with identity.
-
+  
    The `Maybe` type constructor takes types from **Hask**, eg `x`, and turns them into new types, `Maybe x` which is just a subset of **Hask**. The identity function on these new types uses the same identity function from **Hask** which is why we can say `fmap id = id` in haskell. So for us to verify our "functor", we need to verify this equality.
  
    ```
@@ -46,8 +46,8 @@ The exercises.
    4. id (Just x) = id Nothing (by 2 and 3)
    5. (Just x) /= Nothing
    ```
- 
-  So we do not get that this definition of `fmap` gives us a functor.
+   
+   So we do not get that this definition of `fmap` gives us a functor.
 
 2. Prove the functor laws for the `reader` functor. From the book,
    turning the type constructor `(->) r` into a functor by defining
