@@ -15,7 +15,9 @@
 <a href="/blog/">blog</a>
 </nav>
 <hr/>
+<div id="content">
 {{ content }}
+</div>
 <hr/>
 <footer>
 <p>Updated at <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date_to_rfc822 }}</time></p>
