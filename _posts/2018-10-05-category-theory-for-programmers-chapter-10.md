@@ -1,73 +1,93 @@
 ---
 layout: post
-title: "Category Theory for Programmers Chapter 8"
+title: "Category Theory for Programmers Chapter 10"
 category:
 tags: []
 ---
 
-Last chapter was about functors, but this is about how we can make them useful. In
-particular, combining functors via _bifunctors_. A reminder of what
-a bifunctor is:
+A reminder of the naturality condition: G f ∘ α<sub>a</sub> = α<sub>b</sub> ∘ F f
 
-```haskell
-class Bifunctor f where
-  bimap :: (a -> c) -> (b -> d) -> f a b -> f c d
-  bimap g h = first g . second h
-  first :: (a -> c) -> f a b -> f c b
-  first g = bimap g id
-  second :: (b -> d) -> f a b -> f a d
-  second = bimap id
-```
-
-1. Show the data type `data Pair a b = Pair a b` is a bifunctor. Specifically, we show that if `a` or `b` is a functor, then `Pair` is a functor if 
+1. Define a natural transformation from `Maybe` to the `List`
+   functor. Prove naturality condition for it.
 
    ```haskell
-   instance Bifunctor (Pair a b) where
-     bimap f g (Pair a b) = Pair (f a) (g b)
+   asList :: Maybe a -> [a]
+   asList Nothing = []
+   asList (Just x) = [x]
    ```
 
-2. Show isomorphism between `Maybe` and 
+   To prove the naturality condition, `fmap f . asList = asList . fmap f`, we have two cases, `Nothing` and `Just x`.
 
    ```haskell
-   type Maybe' a = Either (Const () a) (Identity a)
+   fmap f (asList Nothing) = fmap f [] = []
+   asList (fmap f Nothing) = asList Nothing = []
    ```
 
    ```haskell
-   maybeToEither :: Maybe a -> Maybe' a
-   maybeToEither Nothing = Left (Const ())
-   maybeToEither (Just x) = Right (Identity x)
-
-   eitherToMaybe :: Maybe' a -> Maybe a
-   eitherToMaybe (Left _) = Nothing
-   eitherToMaybe (Right (Identity x)) = Just x
+   fmap f (asList (Just x)) = fmap f [x] = [f x]
+   asList (fmap f (Just x)) = asList (Just (f x)) = [f x]
    ```
 
-3. Show that `PreList` is an instance of `Bifunctor`,
+2. Define at least 2 different natural transformations between
+   `Reader ()` and the list functor `[]`. How many different lists of `()` are there?
 
    ```haskell
-   data PreList a b = Nil | Cons a b
+   asEmptyList :: Reader () a -> [a]
+   asEmptyList _ = []
    ```
-
-   Let's make this look like some things we know are functors and bifunctors already.
 
    ```haskell
-   data PreList a b = Maybe (a, b)
-                    = Either (Const () c) (Identity a, Identity b)
+   asOneList :: Reader () a -> [a]
+   asOneList r = [r ()]
    ```
-
-   I don't really know where to go with this other than we see it's functors and bifunctors all the way down. But it's probably easiest to just implement the interface outright.
-
-4. Show `K2`, `Fst`, and `Snd` define bifunctors in `a` and `b`.
 
    ```haskell
-   interface Bifunctor (K2 c a b) where
-     bimap _ _ (K2 c) = K2 c
-   interface Bifunctor (Fst a b) where
-     bimap f _ (Fst a) = Fst (f a)
-   interface Bifunctor (Snd a b) where
-     bimap _ g (Snd a b) = Snd a (g b)
+   asTwoList :: Reader () a -> [a]
+   asTwoList r = [r (), r ()]
    ```
-As for the rest of this, a couple good resources about profunctors
-are [this
-link](http://www.tomharding.me/2017/06/26/fantas-eel-and-specification-18/)
-and [this video](https://www.youtube.com/watch?v=OJtGECfksds).
+
+   And so on, there are infinitely many of these.
+
+3. Define natural transformations between `Reader Bool` and `Maybe`.
+
+   ```haskell
+   none :: Reader Bool -> Maybe
+   none _ = Nothing
+   ```
+
+   ```haskell
+   true :: Reader Bool -> Maybe
+   true r = Just (r True)
+   ```
+
+   ```haskell
+   false :: Reader Bool -> Maybe
+   false r = Just (r False)
+   ```
+
+4. Show that horizontal composition of natural transformations
+   satisfies the naturality condition.
+
+   Let `F`, `F'` be functors from categories `A` to `B` and `G`, `G'` functors from categories `B` to `C` with natural transformations `α` from `F` to `F'` and `β` from `G` to `G'`. We must show the naturality condition holds for
+
+   ```haskell
+   (G ∘ F) f ∘ (β * α) = (β * α) ∘ (G' ∘ F') f
+   ```
+
+   I don't want to do it.
+
+
+5. No essays.
+
+6. Naturality conditions of transformations between differetn `Op`
+   functors. Ie, `Op A B` is `B -> A`, and
+
+   ```haskell
+   op :: Op Bool Int
+   op = Op (\x -> x > 0)
+
+   f :: String -> Int
+   f x = read x
+   ```
+
+   `fmap f op :: Op Bool String` Don't know where to go with this...
