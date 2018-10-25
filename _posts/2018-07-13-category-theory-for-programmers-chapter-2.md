@@ -1,8 +1,10 @@
 ---
 layout: post
-title: "Category Theory for Programmers Chapter 2"
+title: "Category Theory for Programmers Chapter 2: Types and Functions"
 category:
-tags: []
+tags:
+- Category Theory
+- Category Theory for Programmers
 ---
 1. Implement `memoize`
    ```javascript

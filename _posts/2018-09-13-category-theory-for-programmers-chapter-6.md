@@ -1,8 +1,10 @@
 ---
 layout: post
-title: "Category Theory for Programmers Chapter 6"
+title: "Category Theory for Programmers Chapter 6: Simple Algebraic Data Types"
 category:
-tags: []
+tags:
+- Category Theory
+- Category Theory for Programmers
 ---
 
 1. Show the isomorphism between `Maybe a` and `Either () a`.

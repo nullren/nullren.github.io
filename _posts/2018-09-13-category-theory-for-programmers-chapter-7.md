@@ -1,8 +1,10 @@
 ---
 layout: post
-title: "Category Theory for Programmers Chapter 7"
+title: "Category Theory for Programmers Chapter 7: Functors"
 category:
-tags: []
+tags:
+- Category Theory
+- Category Theory for Programmers
 ---
 
 This helps me because the book was not super rigorous about the

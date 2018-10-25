@@ -1,8 +1,10 @@
 ---
 layout: post
-title: "Category Theory for Programmers Chapter 4"
+title: "Category Theory for Programmers Chapter 4: Kleisli Categories"
 category:
-tags: []
+tags:
+- Category Theory
+- Category Theory for Programmers
 ---
 
 Solutions for the challenges in this chapter were basically done as a C++11 file.

@@ -1,8 +1,10 @@
 ---
 layout: post
-title: "Category Theory for Programmers Chapter 1"
+title: "Category Theory for Programmers Chapter 1: Category: The Essence of Composition"
 category:
-tags: []
+tags:
+- Category Theory
+- Category Theory for Programmers
 ---
 
 Just my notes and solutions for Chapter 1.

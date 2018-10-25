@@ -1,8 +1,10 @@
 ---
 layout: post
-title: "Category Theory for Programmers Chapter 10"
+title: "Category Theory for Programmers Chapter 10: Natural Transformations"
 category:
-tags: []
+tags:
+- Category Theory
+- Category Theory for Programmers
 ---
 
 A reminder of the naturality condition: G f ∘ α<sub>a</sub> = α<sub>b</sub> ∘ F f

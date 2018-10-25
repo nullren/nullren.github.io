@@ -1,8 +1,10 @@
 ---
 layout: post
-title: "Category Theory for Programmers Chapter 3"
+title: "Category Theory for Programmers Chapter 3: Categories Great and Small"
 category:
-tags: []
+tags:
+- Category Theory
+- Category Theory for Programmers
 ---
 
 The notion of orders is introduced here and it's not totally clear from the

@@ -1,8 +1,10 @@
 ---
 layout: post
-title: "Category Theory for Programmers Chapter 8"
+title: "Category Theory for Programmers Chapter 8: Functoriality"
 category:
-tags: []
+tags:
+- Category Theory
+- Category Theory for Programmers
 ---
 
 Last chapter was about functors, but this is about how we can make them useful. In

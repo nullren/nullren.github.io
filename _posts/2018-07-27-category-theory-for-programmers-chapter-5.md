@@ -1,8 +1,10 @@
 ---
 layout: post
-title: "Category Theory for Programmers Chapter 5"
+title: "Category Theory for Programmers Chapter 5: Products and Coproducts"
 category:
-tags: []
+tags:
+- Category Theory
+- Category Theory for Programmers
 ---
 
 Before starting, it can help to look at a few [examples of
@@ -29,6 +31,12 @@ definition of **a** *product*. I'll state it here exactly:
 
 What was not super clear was that a product on a partially ordered set
 is unique and only on posets are you able to call it **the** product.
+
+Also, in Category Theory for the Sciences, there was a slogan to help
+garner some intuition about coproducts:
+
+> Any time behavior is determined by cases, there is a coproduct
+> involved.
 
 
 1. Let \\(x,y \in \mathbf{C}\\) be terminal objects. Because \\(x\\)

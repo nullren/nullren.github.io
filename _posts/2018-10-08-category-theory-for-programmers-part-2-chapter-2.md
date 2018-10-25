@@ -1,8 +1,10 @@
 ---
 layout: post
-title: "Category Theory for Programmers Part 2 Chapter 2"
+title: "Category Theory for Programmers Chapter 12: Limits and Colimits"
 category:
-tags: []
+tags:
+- Category Theory
+- Category Theory for Programmers
 ---
 
 Challenges
