@@ -32,7 +32,7 @@ Challenges
    
    Similarly, we can show $$e_A f^{-1}(e_B) = e_A = f^{-1}(e_B).$$ \\(\blacksquare\\)
    
-2. Consider homomorphism from `([Integer], [], ++)` to $(\mathbb{Z}, 1, \cross)$.
+2. Consider homomorphism from `([Integer], [], ++)` to $(\mathbb{Z}, 1, \time)$.
 
    1. What is image of `[]`?
 
@@ -44,7 +44,7 @@ Challenges
 
       Because we don't need to worry about associativity (property of monoids),
       we can say that `[1, 2, 3, 4] = [1] ++ [2] ++ [3] ++ [4]`. Then using the
-      assumption above, this maps to $1 \cross 2 \cross 3 \cross 4 = 24$.
+      assumption above, this maps to $1 \times 2 \times 3 \times 4 = 24$.
 
    3. How many lists map to $12$?
 
