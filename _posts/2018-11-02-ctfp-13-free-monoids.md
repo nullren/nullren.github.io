@@ -32,7 +32,7 @@ Challenges
    
    Similarly, we can show $$e_A f^{-1}(e_B) = e_A = f^{-1}(e_B).$$ \\(\blacksquare\\)
    
-2. Consider homomorphism from `([Integer], [], ++)` to $(\mathbb{Z}, 1, \time)$.
+2. Consider homomorphism from `([Integer], [], ++)` to $(\mathbb{Z}, 1, \times)$.
 
    1. What is image of `[]`?
 
@@ -48,7 +48,7 @@ Challenges
 
    3. How many lists map to $12$?
 
-      The prime factors of $12$ are $2 \cross 2 \cross 3$ and so we can enumerate
+      The prime factors of $12$ are $2 \times 2 \times 3$ and so we can enumerate
       all groups of integers that have product 12:
       - $2, 2, 3$
       - $4, 3$
