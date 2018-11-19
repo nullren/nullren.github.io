@@ -20,6 +20,30 @@ tags:
    psi fa h = fmap h fa
    ```
    
+   Need to verify `phi . psi = id` and `psi . phi = id`.
+   
+   - Want to show: `(phi . psi) fa = fa`
+   - `phi (psi fa)`
+   - `phi (\h -> psi fa h)`
+   - `phi (\h -> fmap h fa)`
+   - `(\h -> fmap h fa) id`
+   - `fmap id fa`
+   - `fa`
+   
+   Done.
+   
+   - Want to show: `(psi . phi) nt = nt`
+   - `psi (phi nt)`
+   - `psi (nt id)`
+   - `(\fa h -> fmap h fa) (nt id)`
+   - `(\h -> fmap h (nt id))`
+   - ...👐 something about natural transformations and functors...
+   - `(\h -> nt (h . id)`
+   - `(\h -> nt h) = nt`
+   
+   Feels like to go this way, we have to look inside the natural transformation
+   or `fmap` somehow to un-pack it. I can't think of what's needed.
+   
    
 2. How does the Yoneda lemma work for functors from a discrete category?
 
