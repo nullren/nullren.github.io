@@ -20,6 +20,10 @@ tags:
    psi fa h = fmap h fa
    ```
    
+   However, since we know this is a bijection, all that
+   remains to show the structure is preserved and that it is an isomorphism.
+   Proving they are identities might be easier.
+   
    Need to verify `phi . psi = id` and `psi . phi = id`.
    
    - Want to show: `(phi . psi) fa = fa`
