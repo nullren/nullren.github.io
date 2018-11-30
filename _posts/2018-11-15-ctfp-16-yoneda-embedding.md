@@ -7,7 +7,10 @@ tags:
 - Category Theory for Programmers
 ---
 
-1. Express the co-Yoneda embedding in Haskell.
+1. Express the co-Yoneda embedding in Haskell,
+   $ [\mathscr{C}^{\mathrm{op}}, \mathbf{Set}](H_A, F) \cong F(A) $.
+   
+   _Todo_.
 
 2. Show that the bijection we established between `fromY` and `btoa` is
    an isomorphism.
