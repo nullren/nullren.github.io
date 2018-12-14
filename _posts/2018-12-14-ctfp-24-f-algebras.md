@@ -20,3 +20,7 @@ tags:
      - $\left(\sum a_i t^i\right) +_{\mathscr{R}\left[t\right]} \left(\sum b_i t^i\right) = \sum (a_i + b_i) t^i\$
      - $\left(\sum a_i t^i\right) \times_{\mathscr{R}\left[t\right]} \left(\sum b_i t^i\right) = \sum \left(\sum_{x+y=i} a_x b_y\right) t^i\$
    
+2. Generalize previous construction to polynomials of many independent variables.
+
+   Since $\mathscr{R}[t]$ is a ring, so too is $(\mathscr{R}[t])[u]$. In this way,
+   $\mathscr{R}[t_0, ..., t_n]$ can be defined as $\mathscr{R}[t_0][...][t_n]$.
